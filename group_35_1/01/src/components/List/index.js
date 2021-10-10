@@ -1,2 +1,2 @@
 import { List } from './List.jsx';
-export default List;
+export default {List};
