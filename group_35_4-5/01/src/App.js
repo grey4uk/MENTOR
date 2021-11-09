@@ -1,9 +1,9 @@
 import React, { Component } from 'react';
 import { v4 as uuidv4 } from 'uuid';
 
-import List from './components/List/List';
-import Form from './components/Form/';
-import Error from './components/Error/';
+import { List } from './components';
+import Form from './components/Form';
+import Error from './components/Error';
 import { API_KEY } from './env';
 
 const initialList = [

@@ -9,6 +9,10 @@ export const App = () => {
   const ref = useRef(null);
 
   useEffect(() => {
+      getFotos();
+  }, []);
+
+  const getFotos=()=>{
     fetch(
       'https://pixabay.com/api/?key=15313425-bc0f61e46a051ea2578b0fd6a&q=yellow+flowers&image_type=photo'
     )
@@ -17,7 +21,7 @@ export const App = () => {
         console.log(`fotos`, data.hits);
         setFotos(data.hits);
       });
-  }, []);
+  }
 
   const handleFocus = (e) => {
     const target = e.target;
@@ -36,8 +40,8 @@ export const App = () => {
 
   useEffect(() => {
     ref?.current?.addEventListener('click', refAction);
-    return () =>
-      ref?.current?.removeEventListener('click', refAction);
+    // return () =>
+    //   ref?.current?.removeEventListener('click', refAction);
   }, []);
 
   return (
